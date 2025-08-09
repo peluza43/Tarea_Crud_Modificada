@@ -1,0 +1,2 @@
+# Evitar subir credenciales
+backend/.env
