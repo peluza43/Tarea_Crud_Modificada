@@ -3,7 +3,7 @@ from db import query_all, query_one, execute
 
 api = Blueprint("api", __name__, url_prefix="/api")
 
-# LISTAR (con búsqueda opcional ?q=)
+# LISTAR con búsqueda opcional ?q=
 @api.get("/alumnos")
 def list_alumnos():
     q = request.args.get("q", "").strip()
