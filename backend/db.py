@@ -3,8 +3,7 @@ import psycopg2
 from psycopg2.extras import RealDictCursor
 from dotenv import load_dotenv
 
-# Carga variables desde backend/.env (solo en desarrollo)
-# En producción usa variables de entorno del servidor.
+# Lee variables desde backend/.env en desarrollo
 load_dotenv()
 
 def get_conn():
