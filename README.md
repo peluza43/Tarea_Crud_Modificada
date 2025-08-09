@@ -60,4 +60,4 @@ El id es autoincremental y puede tener huecos si se eliminan filas (comportamien
 No subas backend/.env (está ignorado en .gitignore).
 
 Driver de PostgreSQL: psycopg 3 con binarios para Windows (compatible con Python 3.13).
-```bash
+
