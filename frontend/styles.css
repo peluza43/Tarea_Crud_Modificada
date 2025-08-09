@@ -1,0 +1,17 @@
+:root {
+  --border:#ddd; --bg:#f7f7f7; --ok:#0a7; --err:#c33;
+}
+* { box-sizing: border-box; }
+body { font-family: system-ui, Arial, sans-serif; margin: 20px; }
+h1 { margin-bottom: 6px; }
+
+.toolbar, form { display: flex; gap: 8px; margin: 10px 0; flex-wrap: wrap; }
+
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid var(--border); padding: 8px; text-align: left; }
+thead { background: var(--bg); }
+
+button { cursor: pointer; padding: 6px 10px; }
+#msg { margin-top: 10px; min-height: 1em; }
+#msg.ok  { color: var(--ok); }
+#msg.err { color: var(--err); }
