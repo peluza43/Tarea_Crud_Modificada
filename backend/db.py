@@ -1,32 +1,30 @@
 import os
-import psycopg2
-from psycopg2.extras import RealDictCursor
+import psycopg
+from psycopg.rows import dict_row
 from dotenv import load_dotenv
 
 # Lee variables desde backend/.env en desarrollo
 load_dotenv()
 
 def get_conn():
-    """
-    Abre una conexión nueva a PostgreSQL usando variables de entorno.
-    """
-    return psycopg2.connect(
+    return psycopg.connect(
         host=os.getenv("PG_HOST"),
         port=os.getenv("PG_PORT"),
         dbname=os.getenv("PG_DB"),
         user=os.getenv("PG_USER"),
         password=os.getenv("PG_PASSWORD"),
+        row_factory=dict_row,
     )
 
 def query_all(sql, params=None):
     with get_conn() as conn:
-        with conn.cursor(cursor_factory=RealDictCursor) as cur:
+        with conn.cursor() as cur:
             cur.execute(sql, params or [])
             return cur.fetchall()
 
 def query_one(sql, params=None):
     with get_conn() as conn:
-        with conn.cursor(cursor_factory=RealDictCursor) as cur:
+        with conn.cursor() as cur:
             cur.execute(sql, params or [])
             return cur.fetchone()
 
