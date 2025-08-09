@@ -33,9 +33,9 @@ Frontend
 (ideal con Live Server para evitar bloqueos de fetch en algunos navegadores).
 
 El frontend permite listar, agregar, editar, eliminar y buscar alumnos usando la API del backend.
-```bash
 
-```
+
+
 Estructura del proyecto
 ```bash
 backend/
